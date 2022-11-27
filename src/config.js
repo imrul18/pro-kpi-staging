@@ -1,0 +1,1 @@
+export const baseurl = 'http://kpi-module.test/api'
