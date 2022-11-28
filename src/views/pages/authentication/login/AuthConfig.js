@@ -4,7 +4,6 @@ import { Route } from "react-router-dom";
 import Login from "./Login";
 
 const AuthConfig = () => {
-  console.log("Afnan1");
   return (
     <Route path="/" element={<AppLayout />}>
       <Route

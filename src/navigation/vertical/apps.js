@@ -9,21 +9,30 @@ export default [
     id: 'users',
     title: 'User',
     icon: <User size={20} />,
-    navLink: '/apps/user'
-    // children: [
-    //   {
-    //     id: 'list',
-    //     title: 'List',
-    //     icon: <Circle size={12} />,
-        
-    //   },
-    //   {
-    //     id: 'view',
-    //     title: 'View',
-    //     icon: <Circle size={12} />,
-    //     navLink: '/apps/user/view'
-    //   }
-    // ]
+    navLink: '/apps/user',
+    permission: 'employees_access'
+  }, 
+  {
+    id: 'roles-permissions',
+    title: 'Roles & Permissions',
+    icon: <Shield size={20} />,
+    permission: 'roles_access',
+    children: [
+      {
+        id: 'roles',
+        title: 'Roles',
+        icon: <Circle size={12} />,
+        navLink: '/apps/roles',
+        permission: 'roles_access'
+      },
+      {
+        id: 'permissions',
+        title: 'Permissions',
+        icon: <Circle size={12} />,
+        navLink: '/apps/permissions',
+        permission: 'roles_show'
+      }
+    ]
   },
   {
     id: 'email',
@@ -83,26 +92,6 @@ export default [
         title: 'Add',
         icon: <Circle size={12} />,
         navLink: '/apps/invoice/add'
-      }
-    ]
-  },
-
-  {
-    id: 'roles-permissions',
-    title: 'Roles & Permissions',
-    icon: <Shield size={20} />,
-    children: [
-      {
-        id: 'roles',
-        title: 'Roles',
-        icon: <Circle size={12} />,
-        navLink: '/apps/roles'
-      },
-      {
-        id: 'permissions',
-        title: 'Permissions',
-        icon: <Circle size={12} />,
-        navLink: '/apps/permissions'
       }
     ]
   },

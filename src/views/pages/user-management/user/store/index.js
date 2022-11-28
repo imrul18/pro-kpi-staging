@@ -5,12 +5,12 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import axios from 'axios'
 
 export const getAllData = createAsyncThunk('appUsers/getAllData', async () => {
-  const response = await axios.get('/api/users/list/data')
-  return response.data
+  const response = await axios.get('/employees')
+  return response
 })
 
 export const getData = createAsyncThunk('appUsers/getData', async params => {
-  const response = await axios.get(`/employees`, {email: 'admin@example.com', password: '123456'})
+  const response = await axios.get(`/employee`, {email: 'admin@example.com', password: '123456'})
   return {
     params,
     data: response.data.users,
@@ -58,7 +58,7 @@ export const appUsersSlice = createSlice({
       //   state.total = action.payload.totalPages
       // })
       .addCase(getUser.fulfilled, (state, action) => {
-        state.selectedUser = action.payload
+        state.allData = action.payload
       })
   }
 })
